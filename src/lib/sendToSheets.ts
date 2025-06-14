@@ -4,14 +4,9 @@
  * Requiere que tengas un Web App de Google Apps Script publicado (Deploy > New deployment > Web App)
  */
 const ENDPOINT =
-  "AQUI_PONES_TU_URL_DEL_WEB_APP"; // <--- Reemplaza esto con la URL real de tu Web App
+  "https://script.google.com/macros/s/AKfycbwoVKu6vLxYzB42uL6eORt8yonOsxNNSLhh6LormCTQlIIhMfn0I8_NwihpKlKjHIIokg/exec";
 
 export async function sendToSheets(data: Record<string, any>) {
-  // Validar que el endpoint esté configurado
-  if (ENDPOINT === "AQUI_PONES_TU_URL_DEL_WEB_APP" || ENDPOINT === "TU_WEBHOOK_AQUI") {
-    throw new Error("Debes configurar el endpoint del Google Apps Script en src/lib/sendToSheets.ts");
-  }
-  
   console.log("Enviando datos a Google Sheets:", data);
   
   const resp = await fetch(ENDPOINT, {
